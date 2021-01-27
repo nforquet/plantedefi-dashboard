@@ -1,0 +1,47 @@
+---
+title: "plantedefi-dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+
+# load data
+load(file = "data4dashboard.RData")
+```
+
+Row
+-------------------------------------
+    
+### Nombre de stations dans PlanteDéfi
+    
+```{r}
+valueBox(data4dashboard$nb_stations, icon = "fa-seedling")
+```
+
+### Nombre de stations de la fe.v.e
+    
+```{r}
+valueBox(data4dashboard$nb_stations_feve, icon = "fa-seedling",
+         color = "orange")
+```
+    
+### Nombre de bilans 24h
+
+```{r}
+valueBox(data4dashboard$nb_bilans_24h, icon = "fa-flask",
+         color = "green")
+
+```
+
+### Nombre de bilans 24h stations fe.v.e
+    
+```{r}
+valueBox(data4dashboard$nb_bilans_feve, icon = "fa-flask",
+         color = "red")
+```
+    
+Row
+-------------------------------------
